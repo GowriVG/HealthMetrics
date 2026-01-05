@@ -1,0 +1,155 @@
+/* --- MAIN GRID LAYOUT --- */
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+/* --- LEFT: CHART SECTION --- */
+.chart-section {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.stats { display: flex; gap: 30px; text-align: right; }
+.stat-item { display: flex; flex-direction: column; }
+.stat-item .label { font-size: 0.8rem; color: #888; margin-bottom: 5px; }
+.stat-item .value { font-size: 1.5rem; font-weight: bold; }
+.value.red { color: #D32F2F; }
+.value.light-red { color: #E57373; }
+
+.canvas-container {
+  height: 350px;
+  width: 100%;
+}
+
+/* --- RIGHT: MACRO NUTRIENTS PANEL --- */
+.details-section {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+.details-section h3 { margin-top: 0; margin-bottom: 25px; font-size: 1.2rem; color: #333; }
+
+/* Top Row: Gauge + Buttons */
+.macro-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* Gauge Chart */
+.donut-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gauge-chart {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #F44336 0deg 60deg,
+    #FF9800 60deg 180deg,
+    #FFEB3B 180deg 240deg,
+    #f0f0f0 240deg 360deg
+  );
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.gauge-chart::before {
+  content: "";
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background: white;
+  border-radius: 50%;
+}
+
+.center-text { position: relative; z-index: 2; text-align: center; }
+.center-text strong { display: block; font-size: 2rem; color: #D32F2F; line-height: 1; }
+.center-text small { color: #F44336; font-size: 0.85rem; font-weight: 500; }
+.gauge-label { color: #888; font-size: 0.9rem; }
+
+/* Vertical Buttons */
+.meal-buttons-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100px;
+}
+
+.meal-btn-square {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #888;
+  height: 90px;
+}
+
+.meal-btn-square i { font-size: 1.5rem; margin-bottom: 8px; }
+.meal-btn-square span { font-size: 0.8rem; }
+.meal-btn-square:hover { background: #fdfdfd; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+
+/* Active Button State (Orange) */
+.meal-btn-square.active {
+  background: linear-gradient(135deg, #FF6B35 0%, #F45C2C 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 5px 15px rgba(244, 92, 44, 0.3);
+}
+.meal-btn-square.active i, .meal-btn-square.active span { color: white; }
+
+/* Nutrient Grid */
+.nutrient-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.nutrient-item { display: flex; align-items: center; gap: 10px; }
+
+.bar { width: 4px; height: 35px; border-radius: 4px; }
+.red-bar { background-color: #D32F2F; }
+.orange-bar { background-color: #FF9800; }
+.yellow-bar { background-color: #FFC107; }
+
+.nutrient-info { display: flex; flex-direction: column; }
+.nutrient-info strong { font-size: 0.95rem; color: #333; }
+.nutrient-info span { font-size: 0.8rem; color: #888; }
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Chart takes 2/3, Panel takes 1/3 */
+  gap: 30px;
+  width: 100%;
+}

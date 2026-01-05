@@ -1,0 +1,211 @@
+/* 1. Global Reset & Fonts */
+:host {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  display: block;
+}
+
+/* 2. Main Background Container */
+.login-container {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #005d1f 0%, #0b2d16 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* 3. The Card (White & Purple Split) */
+.login-card {
+  display: flex;
+  width: 900px;
+  max-width: 100%;
+  height: 550px;
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* --- LEFT PANEL --- */
+.left-panel {
+  flex: 1; /* Takes up 50% */
+  background: linear-gradient(135deg, #17b154 0%, #126935 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  color: white;
+  position: relative;
+}
+
+/* The White Circle behind the girl */
+.illustration-circle {
+  width: 280px;
+  height: 280px;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.hero-image {
+  width: 90%; /* Adjust based on your actual PNG */
+  height: auto;
+  object-fit: contain;
+}
+
+.description {
+  font-size: 0.8rem;
+  text-align: center;
+  opacity: 0.8;
+  line-height: 1.5;
+  max-width: 80%;
+}
+
+/* --- RIGHT PANEL --- */
+.right-panel {
+  flex: 1; /* Takes up 50% */
+  background: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 60px;
+}
+
+
+h2 {
+  color: #6c757d;
+  font-weight: 600;
+  margin-bottom: 40px;
+  font-size: 1.5rem;
+}
+
+/* Inputs */
+.input-group {
+  margin-bottom: 30px;
+}
+
+.input-group label {
+  display: none; /* Hidden visually to match design, but good to keep for a11y */
+}
+
+.input-group input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #e0e0e0;
+  padding: 10px 0;
+  font-size: 1rem;
+  outline: none;
+  color: #333;
+  transition: border-color 0.3s;
+}
+
+.input-group input::placeholder {
+  color: #a0a0a0;
+}
+
+.input-group input:focus {
+  border-bottom-color: #8c30f5;
+}
+
+/* Login Button */
+.btn-login {
+  width: 150px;
+  padding: 12px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #17b154 0%, #17b154 100%);
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(109, 21, 214, 0.3);
+  transition: transform 0.2s;
+}
+
+.btn-login:active {
+  transform: scale(0.98);
+}
+
+/* Links */
+.links {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.create-account {
+  color: #a0a0a0;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.forgot-pass {
+  text-align: right; /* Pushes forgot password to the right corner usually, strictly following image it's centered bottom */
+  position: absolute;
+  bottom: 40px;
+  right: 60px;
+}
+
+.forgot-pass a {
+  color: #005d1f;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #8c30f5;
+  padding-bottom: 2px;
+}
+
+.footer-credit {
+  margin-top: 20px;
+  color: rgba(255,255,255, 0.7);
+  font-size: 0.8rem;
+}
+
+/* Styling for the Toggle Link (Login <-> Register switch) */
+.toggle-link {
+  color: #17b154; /* Your Green Theme */
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.toggle-link:hover {
+  text-decoration: underline;
+}
+
+.text-muted {
+  color: #a0a0a0;
+  font-size: 0.9rem;
+}
+
+/* Ensure the card grows if the registration form is long */
+.login-card {
+  min-height: 550px;
+  height: auto; /* Allows expansion */
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .login-card {
+    flex-direction: column;
+    height: auto;
+  }
+  .left-panel {
+    display: none; /* Often hidden on mobile for login screens */
+  }
+  .right-panel {
+    padding: 40px 20px;
+  }
+  .welcome-badge {
+    top: 20px;
+  }
+}

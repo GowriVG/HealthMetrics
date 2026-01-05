@@ -1,0 +1,100 @@
+<div class="content-grid">
+  
+  <div class="chart-section">
+    <div class="chart-header">
+      <h3>Calories Consumed</h3>
+      <div class="stats">
+        <div class="stat-item">
+          <span class="label">Today</span>
+          <span class="value red">1437 kcal</span>
+        </div>
+        <div class="stat-item">
+          <span class="label">Daily Average</span>
+          <span class="value light-red">902 kcal</span>
+        </div>
+      </div>
+    </div>
+    <div class="canvas-container">
+      <canvas baseChart 
+        [data]="lineChartData" 
+        [options]="lineChartOptions" 
+        [type]="lineChartType">
+      </canvas>
+    </div>
+  </div>
+
+  <div class="details-section">
+    <h3>Macro Nutrients</h3>
+    
+    <div class="macro-top-row">
+      
+      <div class="donut-wrapper">
+        <div class="gauge-chart">
+          <div class="center-text">
+            <strong>{{ currentNutrients.calories }}</strong>
+            <small>Cal consumed</small>
+          </div>
+        </div>
+        <div class="gauge-label">344 cal left</div>
+      </div>
+
+      <div class="meal-buttons-vertical">
+        <button class="meal-btn-square" 
+                [class.active]="selectedMeal === 'Breakfast'" 
+                (click)="selectMeal('Breakfast')">
+          <i class="fas fa-egg"></i>
+          <span>Breakfast</span>
+        </button>
+        
+        <button class="meal-btn-square" 
+                [class.active]="selectedMeal === 'Lunch'" 
+                (click)="selectMeal('Lunch')">
+          <i class="fas fa-hamburger"></i>
+          <span>Lunch</span>
+        </button>
+        
+        <button class="meal-btn-square" 
+                [class.active]="selectedMeal === 'Dinner'" 
+                (click)="selectMeal('Dinner')">
+          <i class="fas fa-utensils"></i>
+          <span>Dinner</span>
+        </button>
+        
+        <button class="meal-btn-square" 
+                [class.active]="selectedMeal === 'Snack'" 
+                (click)="selectMeal('Snack')">
+          <i class="fas fa-coffee"></i>
+          <span>Snack</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="nutrient-grid">
+      <div class="nutrient-item">
+        <div class="bar red-bar"></div>
+        <div class="nutrient-info"><strong>{{ currentNutrients.fat }}</strong> <span>Fat</span></div>
+      </div>
+      <div class="nutrient-item">
+        <div class="bar yellow-bar"></div>
+        <div class="nutrient-info"><strong>{{ currentNutrients.fibre }}</strong> <span>Fibre</span></div>
+      </div>
+      <div class="nutrient-item">
+        <div class="bar orange-bar"></div>
+        <div class="nutrient-info"><strong>{{ currentNutrients.carbs }}</strong> <span>Carbs</span></div>
+      </div>
+      <div class="nutrient-item">
+        <div class="bar red-bar"></div>
+        <div class="nutrient-info"><strong>{{ currentNutrients.calcium }}</strong> <span>Calcium</span></div>
+      </div>
+      <div class="nutrient-item">
+        <div class="bar red-bar"></div>
+        <div class="nutrient-info"><strong>{{ currentNutrients.protein }}</strong> <span>Protein</span></div>
+      </div>
+      <div class="nutrient-item">
+        <div class="bar yellow-bar"></div>
+        <div class="nutrient-info"><strong>{{ currentNutrients.vitamins }}</strong> <span>Vitamins</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
