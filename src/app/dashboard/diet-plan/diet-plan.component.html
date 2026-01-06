@@ -1,0 +1,43 @@
+<div class="diet-container">
+  
+  <div class="header-section">
+    <h2>Weekly Diet Plan</h2>
+    <p>Track your calories and macros for {{ selectedDay }}</p>
+  </div>
+
+  <div class="day-selector">
+    <button *ngFor="let day of days" 
+            class="day-btn" 
+            [class.active]="selectedDay === day" 
+            (click)="selectDay(day)">
+      {{ day.substring(0, 3) }} </button>
+  </div>
+
+  <div class="meal-list">
+    
+    <div class="meal-card" *ngFor="let meal of currentMeals">
+      
+      <div class="meal-image">
+        <img [src]="meal.img" [alt]="meal.name">
+      </div>
+
+      <div class="meal-info">
+        <span class="meal-type">{{ meal.type }} • {{ meal.time }}</span>
+        <h3>{{ meal.name }}</h3>
+        <div class="meal-stats">
+          <span class="calories"><i class="fas fa-fire"></i> {{ meal.cal }} kcal</span>
+        </div>
+      </div>
+
+      <div class="meal-action">
+        <button class="recipe-btn">Recipe</button>
+        <div class="check-box">
+          <input type="checkbox">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

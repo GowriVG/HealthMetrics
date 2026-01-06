@@ -1,0 +1,128 @@
+/* --- LAYOUT --- */
+.settings-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.page-header h2 { margin: 0; color: #333; }
+
+.save-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+}
+
+/* --- CARDS --- */
+.settings-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.settings-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+.settings-card h3 {
+  margin: 0 0 20px 0;
+  font-size: 1.1rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.settings-card h3 i { color: #666; }
+
+/* --- SETTING ITEM (Row) --- */
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+.setting-item:last-child { border-bottom: none; }
+
+.info .label { display: block; font-weight: 600; color: #444; margin-bottom: 4px; }
+.info p { margin: 0; font-size: 0.85rem; color: #999; }
+
+/* --- TOGGLE SWITCH (The Cool Part) --- */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px; /* Padding left */
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+}
+
+/* Checked State (Green) */
+input:checked + .slider { background-color: #28a745; }
+input:checked + .slider:before { transform: translateX(24px); }
+
+/* Rounded Sliders */
+.slider.round { border-radius: 34px; }
+.slider.round:before { border-radius: 50%; }
+
+/* --- BUTTONS --- */
+.action-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.btn-outline {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #555;
+  font-weight: 500;
+}
+.btn-outline:hover { background: #f9f9f9; }
+
+.btn-danger {
+  padding: 10px 20px;
+  border: 1px solid #ffebee;
+  background: #ffebee;
+  color: #d32f2f;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.btn-danger:hover { background: #ffcdd2; }

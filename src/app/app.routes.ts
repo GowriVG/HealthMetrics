@@ -3,6 +3,12 @@ import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CaloriesComponent } from './dashboard/calories/calories.component';
 import { StepsComponent } from './dashboard/steps/steps.component';
+import { WaterComponent } from './dashboard/water/water.component';
+import { SleepComponent } from './dashboard/sleep/sleep.component';
+import { StatisticsComponent } from './dashboard/statistics/statistics.component';
+import { DietPlanComponent } from './dashboard/diet-plan/diet-plan.component';
+import { ProfileComponent } from './dashboard/profile/profile.component';
+import { SettingsComponent } from './dashboard/settings/settings.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -19,7 +25,13 @@ export const routes: Routes = [
       // CHILD ROUTES
       { path: 'calories', component: CaloriesComponent },
       { path: 'steps', component: StepsComponent },
+      { path: 'water', component: WaterComponent },
+      { path: 'sleep', component: SleepComponent },
 
+      { path: 'statistics', component: StatisticsComponent },
+      { path: 'diet-plan', component: DietPlanComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'settings', component: SettingsComponent }
     ]
   }
 ];

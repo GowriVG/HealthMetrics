@@ -1,0 +1,84 @@
+<p>settings works!</p>
+<div class="settings-container">
+
+  <div class="page-header">
+    <h2>Settings</h2>
+    <button class="save-btn" (click)="saveSettings()">Save Changes</button>
+  </div>
+
+  <div class="settings-grid">
+
+    <div class="settings-card">
+      <h3><i class="fas fa-sliders-h"></i> General</h3>
+      
+      <div class="setting-item">
+        <div class="info">
+          <span class="label">Dark Mode</span>
+          <p>Switch between light and dark themes</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" [(ngModel)]="settings.darkMode">
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div class="setting-item">
+        <div class="info">
+          <span class="label">Public Profile</span>
+          <p>Allow others to see your progress stats</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" [(ngModel)]="settings.publicProfile">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="settings-card">
+      <h3><i class="fas fa-bell"></i> Notifications</h3>
+      
+      <div class="setting-item">
+        <div class="info">
+          <span class="label">Email Alerts</span>
+          <p>Receive weekly health summaries</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" [(ngModel)]="settings.emailNotifications">
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div class="setting-item">
+        <div class="info">
+          <span class="label">SMS Alerts</span>
+          <p>Get daily reminders on your phone</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" [(ngModel)]="settings.smsNotifications">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="settings-card danger-zone">
+      <h3><i class="fas fa-shield-alt"></i> Security</h3>
+      
+      <div class="setting-item">
+        <div class="info">
+          <span class="label">Two-Factor Auth</span>
+          <p>Add an extra layer of security</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" [(ngModel)]="settings.twoFactorAuth">
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div class="action-buttons">
+        <button class="btn-outline" (click)="changePassword()">Change Password</button>
+        <button class="btn-danger" (click)="deleteAccount()">Delete Account</button>
+      </div>
+    </div>
+
+  </div>
+</div>

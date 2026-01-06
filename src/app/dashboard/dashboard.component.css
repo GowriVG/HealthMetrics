@@ -123,3 +123,31 @@ header {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* Active Blue State */
+.active-blue {
+  background: linear-gradient(135deg, #1E88E5 0%, #1565C0 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 10px 20px rgba(30, 136, 229, 0.3);
+}
+.active-blue p, .active-blue .card-icon { color: white; }
+
+.active-purple {
+  background: linear-gradient(135deg, #7E57C2 0%, #4527A0 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 10px 20px rgba(69, 39, 160, 0.3);
+}
+.active-purple p, .active-purple .card-icon { color: white; }
+
+/* Logout Button Styling */
+.logout-btn {
+  margin-top: 20px; /* Separates it from the rest */
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.logout-btn:hover {
+  background-color: #ffebee !important; /* Light Red Background */
+  color: #D32F2F !important;           /* Red Text */
+}

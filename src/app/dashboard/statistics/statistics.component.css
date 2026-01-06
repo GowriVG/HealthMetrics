@@ -1,0 +1,73 @@
+/* --- CONTAINER --- */
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* --- SUMMARY CARDS --- */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  color: white;
+}
+.icon-circle.purple { background: #673AB7; }
+.icon-circle.green { background: #4CAF50; }
+.icon-circle.blue { background: #2196F3; }
+
+.text { display: flex; flex-direction: column; }
+.text .label { font-size: 0.85rem; color: #888; }
+.text h3 { font-size: 1.5rem; font-weight: 700; color: #333; margin: 5px 0; }
+
+.trend { font-size: 0.8rem; font-weight: 600; }
+.trend.down { color: #4CAF50; } /* Weight down is good (Green) */
+.trend.up { color: #4CAF50; }
+.trend small { color: #aaa; font-weight: 400; }
+
+/* --- CHARTS GRID --- */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  gap: 25px;
+}
+
+.chart-box {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+/* Make the first chart span both columns */
+.chart-box.large {
+  grid-column: span 2; 
+}
+
+.chart-box h3 { margin: 0 0 20px 0; font-size: 1.1rem; color: #444; }
+
+.canvas-wrapper {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}

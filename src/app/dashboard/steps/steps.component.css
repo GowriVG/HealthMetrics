@@ -1,0 +1,147 @@
+/* --- LAYOUT GRID (Matches Calories) --- */
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+/* --- LEFT PANEL --- */
+.chart-section {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  position: relative;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.stats { display: flex; gap: 30px; text-align: right; }
+.stat-item { display: flex; flex-direction: column; }
+.stat-item .label { font-size: 0.8rem; color: #888; margin-bottom: 5px; }
+.value.green { font-size: 1.5rem; font-weight: bold; color: #32CD32; }
+.goal-text { color: #DAA520; font-weight: 600; }
+
+.canvas-container {
+  height: 350px;
+  width: 100%;
+  position: relative;
+}
+
+/* Goal Line Overlay (Simulates the dashed line in your image) */
+.goal-line {
+  position: absolute;
+  top: 15%; /* Adjust height based on 9000 steps */
+  left: 35px; /* Adjust to align with y-axis */
+  right: 10px;
+  border-top: 1px dashed #DAA520;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* --- RIGHT PANEL --- */
+.details-section {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+.details-section h3 { margin-top: 0; margin-bottom: 25px; font-size: 1.2rem; color: #333; }
+
+/* --- DOUBLE RING CHART --- */
+.rings-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px; /* Space for the big rings */
+  margin-bottom: 20px;
+}
+
+/* Outer Ring (Dark Green) */
+.outer-ring {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  /* Conic gradient: 75% dark green, rest grey */
+  background: conic-gradient(
+    #008000 0% 75%,   
+    #e0e0e0 75% 100%  
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Inner Ring (Yellow-Green) */
+.inner-ring {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  /* Conic gradient: 60% lime, rest white/grey */
+  background: conic-gradient(
+    #9ACD32 0% 60%,   
+    #f2f2f2 60% 100%  
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 8px solid white; /* Creates the gap between rings */
+}
+
+/* White Center Hole */
+.inner-ring::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: white;
+  border-radius: 50%;
+}
+
+.center-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.center-text strong { display: block; font-size: 1.8rem; color: #333; }
+.center-text small { color: #888; font-size: 0.8rem; }
+
+/* --- BOTTOM STATS --- */
+.activity-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto; 
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.act-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.act-stat-item strong {
+  font-size: 1.2rem;
+  color: #32CD32;
+  display: block;
+  margin-top: 5px;
+}
+.act-stat-item span { font-size: 0.8rem; color: #888; }
+
+.icon-box { font-size: 1.2rem; margin-bottom: 5px; }
+.icon-box.green { color: #32CD32; }
+.icon-box.yellow { color: #9ACD32; }
+.icon-box.gray { color: #888; }

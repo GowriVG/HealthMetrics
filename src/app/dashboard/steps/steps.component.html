@@ -1,1 +1,75 @@
-<p>steps works!</p>
+<div class="content-grid">
+  
+  <div class="chart-section">
+    <div class="chart-header">
+      <h3>Steps Taken</h3>
+      <div class="stats">
+        <div class="stat-item">
+          <span class="label">Distance Travelled</span>
+          <span class="value green">3.2 miles</span>
+        </div>
+        <div class="stat-item">
+          <span class="label goal-text">Goal 9000 Steps</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="canvas-container">
+      <div class="goal-line"></div>
+      
+      <canvas baseChart 
+        [data]="barChartData" 
+        [options]="barChartOptions" 
+        [type]="barChartType">
+      </canvas>
+    </div>
+  </div>
+
+  <div class="details-section">
+    <h3>Sunday Activity</h3>
+    
+    <div class="rings-wrapper">
+      
+      <div class="outer-ring">
+        
+        <div class="inner-ring">
+          
+          <div class="center-text">
+            <strong>{{ stepsActivity.caloriesBurnt }}</strong>
+            <small>Calories burnt</small>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="activity-stats">
+      
+      <div class="act-stat-item">
+        <div class="icon-box green"><i class="fas fa-shoe-prints"></i></div>
+        <div class="text-box">
+          <strong>{{ stepsActivity.totalSteps }}</strong>
+          <span>Steps</span>
+        </div>
+      </div>
+
+      <div class="act-stat-item">
+        <div class="icon-box yellow"><i class="fas fa-dumbbell"></i></div>
+        <div class="text-box">
+          <strong>{{ stepsActivity.exerciseMin }}</strong>
+          <span>Exercise/min</span>
+        </div>
+      </div>
+
+      <div class="act-stat-item">
+        <div class="icon-box gray"><i class="fas fa-bolt"></i></div>
+        <div class="text-box">
+          <strong>{{ stepsActivity.activeHours }}</strong>
+          <span>Active Hours</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

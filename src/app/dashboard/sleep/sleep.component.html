@@ -1,1 +1,73 @@
-<p>sleep works!</p>
+<div class="content-grid">
+  
+  <div class="chart-section">
+    <div class="chart-header">
+      <h3>Sleep Tracker</h3>
+      <div class="stats">
+        <div class="stat-item">
+          <span class="label">Goal</span>
+          <span class="value purple">7.5 hrs</span>
+        </div>
+        <div class="stat-item">
+          <span class="label">Daily Average</span>
+          <span class="value purple">6.32 hrs</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="canvas-container">
+      <canvas baseChart 
+        [data]="sleepTrackerData" 
+        [options]="sleepTrackerOptions" 
+        [type]="sleepTrackerType">
+      </canvas>
+    </div>
+  </div>
+
+  <div class="details-section">
+    <h3>Sleep Quality</h3>
+    
+    <div class="gauge-wrapper">
+      <div class="gauge-container">
+        <canvas baseChart 
+          [data]="qualityChartData" 
+          [options]="qualityChartOptions" 
+          [type]="qualityChartType">
+        </canvas>
+        
+        <div class="gauge-text">
+          <span class="small-text">Total hours of sleep</span>
+          <strong class="big-number">9</strong>
+        </div>
+      </div>
+      
+      <div class="gauge-labels">
+        <span>10:30 pm</span>
+        <span>07:30 am</span>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      
+      <div class="grid-item">
+        <span class="stat-val">1h 12 mins</span>
+        <span class="stat-lbl">Deep Sleep</span>
+      </div>
+      <div class="grid-item">
+        <span class="stat-val">4h 37 mins</span>
+        <span class="stat-lbl">Light Sleep</span>
+      </div>
+
+      <div class="grid-item">
+        <span class="stat-val light">18 mins</span>
+        <span class="stat-lbl">Awake</span>
+      </div>
+      <div class="grid-item">
+        <span class="stat-val">53 mins</span>
+        <span class="stat-lbl">REM</span>
+      </div>
+
+    </div>
+
+  </div>
+</div>

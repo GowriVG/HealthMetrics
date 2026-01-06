@@ -7,58 +7,80 @@
     </div>
     <nav>
       <ul>
-        <li class="active"><i class="fas fa-home"></i> Dashboard</li>
-        <li><i class="fas fa-chart-line"></i> Statistics</li>
-        <li><i class="fas fa-apple-alt"></i> Diet Plan</li>
-        <li><i class="fas fa-user"></i> Profile</li>
-        <li><i class="fas fa-cog"></i> Settings</li>
+        <li routerLink="/dashboard/calories" routerLinkActive="active">
+          <i class="fas fa-home"></i> Dashboard
+        </li>
+
+        <li routerLink="/dashboard/statistics" routerLinkActive="active">
+          <i class="fas fa-chart-line"></i> Statistics
+        </li>
+
+        <li routerLink="/dashboard/diet-plan" routerLinkActive="active">
+          <i class="fas fa-apple-alt"></i> Diet Plan
+        </li>
+
+        <li routerLink="/dashboard/profile" routerLinkActive="active">
+          <i class="fas fa-user"></i> Profile
+        </li>
+
+        <li routerLink="/dashboard/settings" routerLinkActive="active">
+          <i class="fas fa-cog"></i> Settings
+        </li>
+
+        <li class="logout-btn" (click)="onLogout()">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </li>
       </ul>
     </nav>
   </aside>
 
   <main class="main-content">
-    <header>
-      <h1>Health Overview</h1>
-      <div class="user-profile">
-        <span>Hi, {{ loggedUser }}</span>
-        <div class="avatar">
-          <i class="fas fa-user"></i>
-        </div>
-      </div>
-    </header>
 
-    <div class="cards-container">
+    <ng-container *ngIf="isOverviewPage">
       
-      <div class="card" 
-           routerLink="calories" 
-           routerLinkActive="active-orange">
-        <div class="card-info">
-          <h3>13,100</h3>
-          <p>Calories Eaten</p>
+      <header>
+        <h1>Health Overview</h1>
+        <div class="user-profile">
+          <span>Hi, {{ loggedUser }}</span>
+          <div class="avatar"><i class="fas fa-user"></i></div>
         </div>
-        <div class="card-icon"><i class="fas fa-utensils"></i></div>
-      </div>
+      </header>
 
-      <div class="card" 
-           routerLink="steps" 
-           routerLinkActive="active-green">
-        <div class="card-info">
-          <h3>52,100</h3>
-          <p>Steps Taken</p>
+      <div class="cards-container">
+        
+        <div class="card" routerLink="/dashboard/calories" routerLinkActive="active-orange">
+          <div class="card-info">
+            <h3>13,100</h3>
+            <p>Calories Eaten</p>
+          </div>
+          <div class="card-icon"><i class="fas fa-utensils"></i></div>
         </div>
-        <div class="card-icon"><i class="fas fa-shoe-prints"></i></div>
-      </div>
 
-      <div class="card">
-        <div class="card-info"><h3>38.7 ltr</h3><p>Water Consumed</p></div>
-        <div class="card-icon"><i class="fas fa-tint"></i></div>
-      </div>
-      <div class="card">
-        <div class="card-info"><h3>50 hr</h3><p>Sleep Duration</p></div>
-        <div class="card-icon"><i class="fas fa-moon"></i></div>
-      </div>
+        <div class="card" routerLink="/dashboard/steps" routerLinkActive="active-green">
+          <div class="card-info">
+            <h3>52,100</h3>
+            <p>Steps Taken</p>
+          </div>
+          <div class="card-icon"><i class="fas fa-shoe-prints"></i></div>
+        </div>
 
-    </div>
+        <div class="card" routerLink="/dashboard/water" routerLinkActive="active-blue">
+          <div class="card-info">
+            <h3>38.7 ltr</h3>
+            <p>Water Consumed</p>
+          </div>
+          <div class="card-icon"><i class="fas fa-tint"></i></div>
+        </div>
+
+        <div class="card" routerLink="/dashboard/sleep" routerLinkActive="active-purple">
+          <div class="card-info">
+            <h3>50 hr</h3>
+            <p>Sleep Duration</p>
+          </div>
+          <div class="card-icon"><i class="fas fa-moon"></i></div>
+        </div>
+
+      </div> </ng-container>
 
     <div class="route-container fade-in">
       <router-outlet></router-outlet>

@@ -1,0 +1,150 @@
+/* --- GRID LAYOUT --- */
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  width: 100%;
+}
+
+/* --- LEFT PANEL --- */
+.chart-section {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.stats { display: flex; gap: 30px; text-align: right; }
+.stat-item { display: flex; flex-direction: column; }
+.stat-item .label { font-size: 0.8rem; color: #888; margin-bottom: 5px; }
+.value.purple { font-size: 1.5rem; font-weight: bold; color: #4527A0; }
+
+.canvas-container {
+  height: 350px;
+  width: 100%;
+}
+
+/* --- RIGHT PANEL --- */
+.details-section {
+  background: white;
+  /* Removed padding to let borders touch edges */
+  padding: 0; 
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Keeps borders inside corners */
+}
+
+.details-section h3 { 
+  margin: 30px 0 10px 30px; /* Restored margin for title */
+  font-size: 1.2rem; 
+  color: #333; 
+}
+
+/* Gauge Area */
+.gauge-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  position: relative;
+}
+
+.gauge-container {
+  width: 260px; /* Wider to match reference */
+  height: 130px; /* Half height */
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* Text Overlay */
+.gauge-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.small-text { 
+  font-size: 0.75rem; 
+  color: #666; 
+  margin-bottom: -5px; /* Pull text closer to number */
+  position: relative;
+  top: -10px;
+}
+.big-number { 
+  font-size: 3.5rem; 
+  line-height: 1; 
+  color: #333; 
+  font-weight: 600; 
+}
+
+/* Time Labels */
+.gauge-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 280px; /* Slightly wider than chart */
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* --- STATS GRID (The 4 Boxes) --- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Removed gap to make borders touch */
+  margin-top: auto;
+  border-top: 1px solid #eee; /* Main divider line */
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 10px;
+  text-align: center;
+}
+
+/* Add Borders to create the crosshair look */
+/* First item (Top Left) gets right and bottom border */
+.grid-item:nth-child(1) {
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+/* Second item (Top Right) gets bottom border */
+.grid-item:nth-child(2) {
+  border-bottom: 1px solid #eee;
+}
+/* Third item (Bottom Left) gets right border */
+.grid-item:nth-child(3) {
+  border-right: 1px solid #eee;
+}
+
+.stat-val {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #4527A0; 
+  margin-bottom: 5px;
+}
+.stat-val.light { color: #7E57C2; } 
+
+.stat-lbl { 
+  font-size: 0.85rem; 
+  color: #888; 
+  font-weight: 500;
+}

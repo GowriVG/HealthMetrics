@@ -1,0 +1,118 @@
+/* --- GRID LAYOUT --- */
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+/* --- LEFT PANEL --- */
+.chart-section {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  position: relative;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.stats { display: flex; gap: 30px; text-align: right; }
+.stat-item { display: flex; flex-direction: column; }
+.stat-item .label { font-size: 0.8rem; color: #888; margin-bottom: 5px; }
+.value.blue { font-size: 1.5rem; font-weight: bold; color: #1E88E5; }
+
+.canvas-container {
+  height: 350px;
+  width: 100%;
+  position: relative;
+}
+
+/* Custom Target Line Overlay */
+.target-line {
+  position: absolute;
+  top: 38%; /* Adjust to match '7 litres' on Y-axis (approx 38% from top) */
+  left: 35px;
+  right: 10px;
+  border-top: 1px dashed #1E88E5;
+  z-index: 0;
+  opacity: 0.7;
+}
+.target-label {
+  position: absolute;
+  right: 0;
+  top: -20px;
+  font-size: 0.75rem;
+  color: #1E88E5;
+}
+
+/* --- RIGHT PANEL --- */
+.details-section {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+.details-section h3 { margin-top: 0; margin-bottom: 20px; font-size: 1.2rem; color: #333; }
+
+/* Radar Chart Area */
+.radar-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.radar-container {
+  width: 250px;
+  height: 250px;
+}
+
+/* Intake Buttons Area */
+.intake-section h4 {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.intake-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.intake-btn {
+  flex: 1;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 10px 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  transition: 0.2s;
+  color: #666;
+}
+
+.intake-btn i { font-size: 1rem; }
+.intake-btn span { font-size: 0.75rem; }
+
+.intake-btn:hover { background: #f9f9f9; }
+
+/* Active State (Blue) */
+.intake-btn.active {
+  background-color: #1E88E5;
+  color: white;
+  border-color: #1E88E5;
+  box-shadow: 0 4px 10px rgba(30, 136, 229, 0.3);
+}
