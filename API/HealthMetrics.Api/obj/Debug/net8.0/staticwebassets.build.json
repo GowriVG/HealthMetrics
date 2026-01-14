@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "S7LuiKuXtRxybbYJqSLy0h424rJ3++iCDthzMcqxxM8=",
+  "Source": "HealthMetrics.Api",
+  "BasePath": "_content/HealthMetrics.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
